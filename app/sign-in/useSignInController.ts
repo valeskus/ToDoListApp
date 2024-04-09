@@ -4,7 +4,8 @@ import { useSignIn, useUserStore } from "../../src/stores/user/hooks"
 export const useSignInController = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-    const signIn = useSignIn()
+    const signIn = useSignIn();
+    const userInfo = useUserStore();
 
     const handleEmail = useCallback((value: string) => {
         setEmail(value)
@@ -27,5 +28,6 @@ export const useSignInController = () => {
         handlePress,
         email,
         password,
+        userInfo
     }
 }

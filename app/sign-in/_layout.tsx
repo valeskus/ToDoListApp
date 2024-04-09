@@ -6,9 +6,10 @@ import { Button } from '../../src/UI/Button';
 
 import { LinkButton } from '../../src/UI/LinkButton';
 import { Input } from '../../src/UI/Input';
+import { Redirect } from 'expo-router';
 
 export default function SignIn(): JSX.Element {
-  const { handleEmail, handlePassword, handlePress, email, password } = useSignInController()
+  const { handleEmail, handlePassword, handlePress, email, password, userInfo } = useSignInController()
   return (
     <View style={styles.container}>
       <View style={styles.first_container}>
@@ -23,8 +24,8 @@ export default function SignIn(): JSX.Element {
           <Input onChange={handleEmail} label='Email' value={email} />
           <Input onChange={handlePassword} label='Password' value={password} />
         </View>
-
         <Button onPress={handlePress} title='Sign In' />
+        {userInfo.accessToken && <Redirect href={'/home'} />}
       </View>
     </View>
   )
