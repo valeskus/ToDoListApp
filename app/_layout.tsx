@@ -8,9 +8,9 @@ import { Provider } from 'react-redux';
 export default () => {
     return (
         <Provider store={store}>
-            <Stack initialRouteName={'home'}>
+            <Stack initialRouteName={'sign-in'} screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="sign-up" />
-                <Stack.Screen name="sign-in" />
+                <Stack.Screen name="home" />
             </Stack>
         </Provider>
     );
