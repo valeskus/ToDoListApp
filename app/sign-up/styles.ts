@@ -12,10 +12,10 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: 10,
-        minHeight: 180
+        height: 180
     },
     second_container: {
-        flex: 2,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 10,
