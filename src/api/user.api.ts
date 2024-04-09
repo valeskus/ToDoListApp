@@ -1,9 +1,9 @@
 import { client } from "./client";
 
-
-export function login() {
+export const login = async (email: string, password: string) => {
+    return client.signInWithEmailAndPassword(email, password);
 }
 
-export function register() {
-
+export const register = async (email: string, password: string) => {
+    return client.createUserWithEmailAndPassword(email, password);
 }

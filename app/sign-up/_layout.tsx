@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, Text, TextInput, View } from 'react-native';
 import { styles } from './styles';
-import { useSignInController } from './useSignInController';
+import { useSignUpController } from './useSignUpController';
 
-export default function SignIn(): JSX.Element {
-  const { handleEmail, handlePassword, handlePress, email, password } = useSignInController()
+export default function SignUp(): JSX.Element {
+  const { handleEmail, handlePassword, handlePress, email, password, message } = useSignUpController();
+
   return (
     <View style={styles.container}>
-      <Text>Sign in screen</Text>
+      <Text>Sign up screen</Text>
       <TextInput
         style={{ padding: 5, borderColor: 'red', borderWidth: 2, marginBottom: 10 }}
         onChangeText={handleEmail}
@@ -15,10 +16,12 @@ export default function SignIn(): JSX.Element {
       />
       <TextInput
         style={{ padding: 5, borderColor: 'red', borderWidth: 2, marginBottom: 10 }}
+
         onChangeText={handlePassword}
         value={password}
       />
-      <Button onPress={handlePress} title='Sign In' />
+      <Button onPress={handlePress} title='Sign Up' />
+      <Text>{message}</Text>
     </View>
   )
 }

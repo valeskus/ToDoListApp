@@ -1,23 +1,30 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, FirebaseApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, Auth } from "firebase/auth";
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
 class Client {
-    public app: any;
+    private app: FirebaseApp;
 
     constructor() {
-
-        // Initialize Firebase
         const firebaseConfig = {
-            apiKey: 'api-key',
-            authDomain: 'project-id.firebaseapp.com',
-            databaseURL: 'https://project-id.firebaseio.com',
-            projectId: 'project-id',
-            storageBucket: 'project-id.appspot.com',
-            messagingSenderId: 'sender-id',
-            appId: 'app-id',
-            measurementId: 'G-measurement-id',
+            apiKey: "AIzaSyCxQ_s-07OJRvQYGLZ-ptBHUkgPED9tfAk",
+            authDomain: "todolistapp-e432e.firebaseapp.com",
+            projectId: "todolistapp-e432e",
+            storageBucket: "todolistapp-e432e.appspot.com",
+            messagingSenderId: "517413034743",
+            appId: "1:517413034743:web:509e5ce33c072409b011f2",
+            measurementId: "G-SH27VELCRG"
         };
 
         this.app = initializeApp(firebaseConfig);
+    }
+
+    signInWithEmailAndPassword(email: string, password: string) {
+        return signInWithEmailAndPassword(getAuth(client.app), email, password);
+    }
+
+    createUserWithEmailAndPassword(email: string, password: string) {
+        return createUserWithEmailAndPassword(getAuth(client.app), email, password);
     }
 }
 
