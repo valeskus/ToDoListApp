@@ -3,17 +3,27 @@ import { Button } from '../../../../../src/UI/Button';
 import { styles } from './styles';
 
 interface Props {
-    onAdd: () => Promise<void>;
+    onFormButtonPress: () => void;
+    isFormHide: boolean
     // signOut:()=>{}
 }
 
-export function Header({ onAdd }: Props): JSX.Element {
+export function Header({ isFormHide, onFormButtonPress }: Props): JSX.Element {
 
     return (
         <View style={styles.container}>
-            <Button title={'Sign Out'} onPress={() => { }} />
-            <Text style={styles.title}>To Do List</Text>
-            <Button title={'Add new'} onPress={onAdd} />
+            <View style={styles.header_item}>
+                <Button title={'Sign Out'} onPress={() => { }} />
+            </View>
+            <View style={styles.header_item}>
+                <Text style={styles.title}>To Do List</Text>
+
+            </View>
+            <View style={styles.header_item}>
+                {isFormHide && <Button title={'Add New'} onPress={onFormButtonPress} />}
+                {!isFormHide && <Button title={'Hide Form'} onPress={onFormButtonPress} />}
+            </View>
+
         </View>
     )
 }

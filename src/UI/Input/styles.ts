@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
     input: {
-        height: 44,
+        height: 35,
         borderColor: 'rgb(50, 20,2)',
         borderWidth: 1,
         borderRadius: 15,
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 0 },
         paddingHorizontal: 5,
         letterSpacing: 0.04,
-        fontWeight: '600',
+        fontWeight: '400',
         color: '#303030',
     },
     inputContainer: {
