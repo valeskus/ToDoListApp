@@ -1,6 +1,6 @@
 import React from "react";
 import { useAddToDoItem, useGetToDoList, useToDoListStore } from "../../../src/stores/toDoList/hooks"
-import { useUserStore } from "../../../src/stores/user/hooks";
+import { useSignOut, useUserStore } from "../../../src/stores/user/hooks";
 
 export const useHomeController = () => {
     const [isLoading, setLoading] = React.useState(false);
@@ -12,6 +12,7 @@ export const useHomeController = () => {
     const addTodo = useAddToDoItem();
     const getToDoList = useGetToDoList();
     const { id: userId } = useUserStore();
+    const signOut = useSignOut()
 
     const changeFormShowing = React.useCallback(() => {
         setFormHide(!isFormHide)
@@ -60,6 +61,7 @@ export const useHomeController = () => {
         handleCardTitle,
         handleCardDescription,
         cardTitle,
-        cardDescription
+        cardDescription,
+        signOut
     }
 }

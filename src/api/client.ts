@@ -1,5 +1,5 @@
 import { initializeApp, FirebaseApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore, Firestore, setDoc, doc, getDoc } from 'firebase/firestore';
 import uuid from 'react-native-uuid';
 interface Item {
@@ -33,6 +33,10 @@ class Client {
         return createUserWithEmailAndPassword(getAuth(client.app), email, password);
     }
 
+    async signOut() {
+        return signOut(getAuth(client.app))
+    }
+
     async addItem<T extends Item>(userId: string, item: Omit<Item, 'id'>): Promise<Array<T>> {
         const items = await this.getItems(userId)
 
@@ -52,7 +56,7 @@ class Client {
         return nextItems;
     }
 
-    getItems<T extends Item>(userId: string): Promise<Array<T>> {
+    async getItems<T extends Item>(userId: string): Promise<Array<T>> {
         return getDoc(doc(this.database, 'todos', userId))
             .then((snapshot) => snapshot.data()?.items || []);
     }

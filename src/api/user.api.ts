@@ -7,3 +7,7 @@ export const login = async (email: string, password: string) => {
 export const register = async (email: string, password: string) => {
     return client.createUserWithEmailAndPassword(email, password);
 }
+
+export const logOut = () => {
+    return client.signOut();
+}

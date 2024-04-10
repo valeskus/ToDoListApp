@@ -17,12 +17,13 @@ export default function Home(): JSX.Element {
     handleCardTitle,
     handleCardDescription,
     cardTitle,
-    cardDescription
+    cardDescription,
+    signOut
   } = useHomeController();
 
   return (
     <View style={{ flexDirection: 'column', flex: 1 }}>
-      <Header onFormButtonPress={changeFormShowing} isFormHide={isFormHide} />
+      <Header onFormButtonPress={changeFormShowing} isFormHide={isFormHide} signOut={signOut} />
       <View style={Platform.OS === 'web' ? styles.container : styles.container_mobile}>
         {!isFormHide &&
           <View style={Platform.OS === 'web' ? styles.form_container : styles.form_container_mobile}>
