@@ -45,19 +45,9 @@ export const getToDos = async (
     dispatch: Dispatch
 ) => {
     try {
-
-        console.log("GET")
         const items = await CardApi.get(userId);
-
-        console.log('====================================');
-        console.log('items', items);
-        console.log('====================================');
-
         dispatch(actionPutToDos(items));
     } catch (error) {
-        console.log('====================================');
-        console.log('ERROR', error);
-        console.log('====================================');
         dispatch(actionError(error));
     }
 }
