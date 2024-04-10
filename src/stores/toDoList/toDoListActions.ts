@@ -28,7 +28,7 @@ export const clearToDos = (dispatch: Dispatch) => {
 
 export const addToDo = async (
     userId: string,
-    cardInfo: CardApi.Card,
+    cardInfo: Omit<CardApi.Card, 'id'>,
     dispatch: Dispatch
 ) => {
     try {

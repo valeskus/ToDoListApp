@@ -10,14 +10,14 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgb(196 243 241)',
         alignItems: 'center',
         justifyContent: 'center',
-        height: 180
+        flex: 1,
     },
     second_container: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         paddingHorizontal: 10,
-        minHeight: 350
+        marginTop: 30
     },
     title: {
         fontSize: 35,
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     },
     text: {
         fontSize: 15,
-        marginBottom: 20,
+        marginBottom: 10,
         textAlign: 'center'
     },
 });

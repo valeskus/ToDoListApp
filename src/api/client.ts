@@ -1,8 +1,7 @@
 import { initializeApp, FirebaseApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getFirestore, Firestore, setDoc, doc, getDoc } from 'firebase/firestore';
-import { uuid } from 'uuidv4';
-
+import uuid from 'react-native-uuid';
 interface Item {
     id: string;
 }
@@ -41,7 +40,7 @@ class Client {
             ...items,
             {
                 ...item,
-                id: uuid(),
+                id: uuid.v4(),
             }
         ] as Array<T>;
 

@@ -1,8 +1,9 @@
-import { Pressable, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { styles } from './styles'
 
 interface Props {
     title: string;
+    id: string;
     description: string;
 }
 

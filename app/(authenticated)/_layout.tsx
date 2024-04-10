@@ -1,5 +1,6 @@
 import { Redirect, Stack } from 'expo-router';
 import { useUserStore } from '../../src/stores/user/hooks';
+import { Header } from './home/components/header';
 
 
 export default function AppLayout() {
@@ -9,5 +10,5 @@ export default function AppLayout() {
     return <Redirect href="/sign-in" />;
   }
 
-  return <Stack />;
+  return <Stack screenOptions={{ headerShown: false }} />
 }

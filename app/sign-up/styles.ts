@@ -11,15 +11,14 @@ export const styles = StyleSheet.create({
         backgroundColor: 'rgb(230 196 243)',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 10,
-        height: 180
+        paddingHorizontal: 10
     },
     second_container: {
-        flex: 1,
+        flex: 2,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         paddingHorizontal: 10,
-        minHeight: 350
+        marginTop: 30
     },
     title: {
         fontSize: 35,

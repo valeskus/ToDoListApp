@@ -6,12 +6,10 @@ export const styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row'
     },
-    right_container: {
+    cardsContainer: {
         flex: 1,
-        backgroundColor: 'red',
-
-    },
-    left_container: {
-        flex: 2
+        flexDirection: 'column',
+        backgroundColor: 'grey',
+        padding: 10
     }
 });

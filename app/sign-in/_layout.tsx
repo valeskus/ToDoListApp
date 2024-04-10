@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { ScrollView, Text, TextInput, View } from 'react-native';
 import { styles } from './styles';
 import { useSignInController } from './useSignInController';
 import { Button } from '../../src/UI/Button';

@@ -10,7 +10,7 @@ export const useAddToDoItem = () => {
     const { id } = useUserStore();
     const { items } = useToDoListStore();
 
-    return (card: Omit<CardApi.Card, 'index'>) => {
+    return (card: Omit<CardApi.Card, 'index' | 'id'>) => {
         return addToDo(id, {
             ...card,
             index: items.length
