@@ -29,7 +29,8 @@ export const signIn = async (credentials: UserCredentials, dispatch: Dispatch) =
 
         dispatch(actionSetUser({
             email: data.user.email,
-            accessToken: await data.user.getIdToken()
+            accessToken: await data.user.getIdToken(),
+            id: data.user.uid
         }));
     } catch (error) {
         dispatch(actionError(error));
@@ -42,7 +43,8 @@ export const signUp = async (credentials: UserCredentials, dispatch: Dispatch) =
 
         dispatch(actionSetUser({
             email: data.user.email,
-            accessToken: await data.user.getIdToken()
+            accessToken: await data.user.getIdToken(),
+            id: data.user.uid
         }));
     } catch (error) {
         dispatch(actionError(error));

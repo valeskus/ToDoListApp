@@ -12,9 +12,10 @@ export function userReducer(
 ): UserStore {
     switch (action.type) {
         case UserActions.SET_USER: {
-            const { email, accessToken } = action.payload as UserInfo;
+            const { email, accessToken, id } = action.payload as UserInfo;
 
             return {
+                id,
                 email,
                 accessToken
             };
