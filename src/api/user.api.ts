@@ -11,3 +11,7 @@ export const register = async (email: string, password: string) => {
 export const logOut = () => {
     return client.signOut();
 }
+
+export const getUser = () => {
+    return client.getUser();
+}
