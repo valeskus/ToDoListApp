@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from "react"
 import { useSignIn, useUserStore } from "../../src/stores/user/hooks"
 
 export const useSignInController = () => {
-    const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
+    const [email, setEmail] = useState<string>('valeskus13@gmail.com');
+    const [password, setPassword] = useState<string>('123456789');
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const signIn = useSignIn();
     const userInfo = useUserStore();
