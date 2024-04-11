@@ -28,8 +28,10 @@ function PressableElement(props: React.PropsWithChildren<Pick<Props, 'onDragEnd'
 export function Card({ title, description, onDragStart, onDragEnd }: Props): JSX.Element {
     return (
         <PressableElement onDragStart={onDragStart} onDragEnd={onDragEnd}>
-            <Text disabled selectable={false} style={styles.title}>{title}</Text>
-            <Text disabled selectable={false} style={styles.description}>{description}</Text>
+            <View style={styles.column}>
+                <Text disabled selectable={false} style={styles.title}>{title}</Text>
+                <Text disabled selectable={false} style={styles.description}>{description}</Text>
+            </View>
         </PressableElement>
     )
 }

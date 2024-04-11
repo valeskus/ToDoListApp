@@ -8,7 +8,10 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         marginLeft: '20%',
         marginRight: '20%',
-        padding: 15
+        padding: 15,
+    },
+    column: {
+        flexDirection: 'column',
     },
     container_web: {
         flex: 1,

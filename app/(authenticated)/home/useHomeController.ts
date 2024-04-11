@@ -56,7 +56,7 @@ export const useHomeController = () => {
 
     React.useEffect(() => {
 
-        setData(toDos.items.sort((prevItem, nextItem) => +prevItem.index - +nextItem.index))
+        setData([...toDos.items].sort((prevItem, nextItem) => +prevItem.index - +nextItem.index))
 
     }, [toDos]);
 
