@@ -52,16 +52,19 @@ export default function Home(): JSX.Element {
           </View>
         }
         <View style={styles.card_container_wrap}>
-          <DragList
-          style={styles.cardsContainer}
-            data={toDos}
-            renderItem={renderItem}
-            keyExtractor={keyExtractor}
-            onReordered={onReordered}
-            key={Platform.OS === 'web' ? toDos.join() : 'static_key'}
-          />
+          {!isLoading &&
+            <DragList
+              style={[styles.cardsContainer, Platform.OS === 'web' && styles.list_web]}
+              data={toDos}
+              renderItem={renderItem}
+              keyExtractor={keyExtractor}
+              onReordered={onReordered}
+              key={Platform.OS === 'web' ? toDos.join() : 'static_key'}
+            />
+          }
+          {isLoading && <ActivityIndicator style={styles.loader}
+            size={'large'} />}
         </View>
-        {isLoading && <ActivityIndicator />}
       </View>
     </View>
 

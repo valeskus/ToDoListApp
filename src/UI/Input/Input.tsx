@@ -1,6 +1,8 @@
 import React from 'react';
 import {
+    Image,
     KeyboardTypeOptions,
+    Pressable,
     Text,
     TextInput,
     View,
@@ -14,13 +16,14 @@ export type Props = {
     invalid?: boolean;
     value?: string;
     refValue?: any;
+    show?: boolean;
+    changeData?: () => void;
     isSelectTextOnFocus?: boolean;
     onChange?: (value: string) => void;
 };
 
 
 export function Input({
-    type,
     label,
     length,
     invalid,
@@ -28,24 +31,33 @@ export function Input({
     onChange,
     refValue,
     isSelectTextOnFocus,
+    show,
+    changeData
 }: Props): JSX.Element {
     const isCodeInput = length === 1 ? true : false;
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
             <TextInput
+                secureTextEntry={changeData ? !show : false}
                 style={[
                     styles.input,
                     isCodeInput && styles.center,
                     invalid && styles.invalid,
+                    changeData && styles.iconInput
                 ]}
-                keyboardType={type}
                 maxLength={length}
                 onChangeText={onChange}
                 value={value}
                 ref={refValue}
                 selectTextOnFocus={isSelectTextOnFocus}
             />
+            {changeData &&
+                <Pressable style={styles.icon_container} onPress={changeData}>
+                    {!show && <Image style={styles.icon} source={require('../../../assets/eyeOpen.png')} />}
+                    {show && <Image style={styles.icon} source={require('../../../assets/eye.png')} />}
+                </Pressable>
+            }
         </View>
     );
 }

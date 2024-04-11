@@ -12,7 +12,7 @@ interface Props {
 function PressableElement(props: React.PropsWithChildren<Pick<Props, 'onDragEnd' | 'onDragStart'>>): JSX.Element {
     if (Platform.OS === 'web') {
         return (
-            <div style={styles.container} onMouseUp={props.onDragEnd} onMouseDown={props.onDragStart}>
+            <div style={styles.container_web} onMouseUp={props.onDragEnd} onMouseDown={props.onDragStart}>
                 {props.children}
             </div>
         )

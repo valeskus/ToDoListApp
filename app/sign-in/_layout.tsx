@@ -9,7 +9,7 @@ import { Input } from '../../src/UI/Input';
 import { Redirect } from 'expo-router';
 
 export default function SignIn(): JSX.Element {
-  const { handleEmail, handlePassword, handlePress, email, password, userInfo } = useSignInController()
+  const { handleEmail, handlePassword, handlePress, email, password, userInfo, showPassword, changeInputData } = useSignInController()
   return (
     <View style={styles.container}>
       <View style={styles.first_container}>
@@ -22,7 +22,7 @@ export default function SignIn(): JSX.Element {
         <Text style={styles.text}>To keep connected with us please sign in with your email and password</Text>
         <View style={styles.inputs_container}>
           <Input onChange={handleEmail} label='Email' value={email} />
-          <Input onChange={handlePassword} label='Password' value={password} />
+          <Input onChange={handlePassword} label='Password' value={password} show={showPassword} changeData={changeInputData} />
         </View>
         <Button onPress={handlePress} title='Sign In' />
         {userInfo.accessToken && <Redirect href={'/home'} />}

@@ -16,12 +16,18 @@ export const styles = StyleSheet.create({
         flexDirection: 'column'
     },
     cardsContainer: {
-        width: 300,
+        width: '100%',
+        height: '100%',
         flexDirection: 'column',
-        paddingVertical: 50,
-        overflow:'hidden',
-        maxHeight:400
+        paddingTop: 3,
     },
+
+    list_web: {
+        maxHeight: 550,
+        paddingTop: 50,
+        paddingBottom: 50,
+    },
+
     form_container: {
         width: 300,
         backgroundColor: 'rgb(190 186 186)',
@@ -44,8 +50,12 @@ export const styles = StyleSheet.create({
     },
     card_container_wrap: {
         flex: 1,
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center'
+        position: 'relative',
+    },
+    loader: {
+        position: 'absolute',
+        top: '40%',
+        right: '50%',
+        left: '50%'
     }
 });

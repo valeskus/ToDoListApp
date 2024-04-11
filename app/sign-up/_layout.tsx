@@ -7,7 +7,7 @@ import { Button } from '../../src/UI/Button';
 import { Input } from '../../src/UI/Input';
 
 export default function SignUp(): JSX.Element {
-  const { handleEmail, handlePassword, handlePress, email, password } = useSignUpController();
+  const { handleEmail, handlePassword, handlePress, email, password, showPassword, changeInputData } = useSignUpController();
 
   return (
     <View style={styles.container}>
@@ -21,7 +21,7 @@ export default function SignUp(): JSX.Element {
         <Text style={styles.text}>Sign up and discover a great amount of new opportunities!</Text>
         <View style={styles.inputs_container}>
           <Input onChange={handleEmail} label='Email' value={email} />
-          <Input onChange={handlePassword} label='Password' value={password} />
+          <Input onChange={handlePassword} label='Password' value={password} show={showPassword} changeData={changeInputData} />
         </View>
         <Button onPress={handlePress} title='Sign Up' />
       </View>

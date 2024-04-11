@@ -5,6 +5,8 @@ export const useSignUpController = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
     const [message, setMessage] = useState<string>('')
+    const [showPassword, setShowPassword] = useState<boolean>(false);
+
 
     const signUp = useSignUp()
 
@@ -22,12 +24,19 @@ export const useSignUpController = () => {
         }
         signUp({ email, password })
     }, [email, password])
+
+    const changeInputData = useCallback(() => {
+        setShowPassword(!showPassword)
+    }, [showPassword])
+
     return {
         handleEmail,
         handlePassword,
         handlePress,
         email,
         password,
-        message
+        message,
+        showPassword,
+        changeInputData
     }
 }
