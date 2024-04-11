@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { signOut } from '../userActions';
-import { useClearToDoList } from '../../toDoList/hooks';
+import { useClearToDoList } from '../../toDoList/hooks/useClearToDoList';
 
 export const useSignOut = () => {
     const dispatch = useDispatch();
