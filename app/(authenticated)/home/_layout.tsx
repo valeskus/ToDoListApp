@@ -41,7 +41,7 @@ export default function Home(): JSX.Element {
   } = useHomeController();
 
   return (
-    <View style={{ flexDirection: 'column', flex: 1 }}>
+    <View style={styles.screen_container}>
       <Header onFormButtonPress={changeFormShowing} isFormHide={isFormHide} signOut={signOut} />
       <View style={Platform.OS === 'web' ? styles.container : styles.container_mobile}>
         {!isFormHide &&
@@ -53,6 +53,7 @@ export default function Home(): JSX.Element {
         }
         <View style={styles.card_container_wrap}>
           <DragList
+          style={styles.cardsContainer}
             data={toDos}
             renderItem={renderItem}
             keyExtractor={keyExtractor}

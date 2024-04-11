@@ -1,6 +1,10 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+    screen_container: {
+        flexDirection: 'column',
+        flex: 1
+    },
     container: {
         flex: 1,
         backgroundColor: '#fff',
@@ -14,7 +18,9 @@ export const styles = StyleSheet.create({
     cardsContainer: {
         width: 300,
         flexDirection: 'column',
-        padding: 10,
+        paddingVertical: 50,
+        overflow:'hidden',
+        maxHeight:400
     },
     form_container: {
         width: 300,

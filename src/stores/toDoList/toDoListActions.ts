@@ -50,4 +50,18 @@ export const getToDos = async (
     } catch (error) {
         dispatch(actionError(error));
     }
-}
+};
+
+export const editToDo = async (
+    userId: string,
+    cardInfo: CardApi.Card,
+    dispatch: Dispatch
+) => {
+    try {
+        const items = await CardApi.edit(userId, cardInfo);
+
+        dispatch(actionPutToDos(items));
+    } catch (error) {
+        dispatch(actionError(error));
+    }
+};

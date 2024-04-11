@@ -14,3 +14,7 @@ export const add = (userId: string, card: Omit<Card, 'id'>) => {
 export const get = (userId: string) => {
     return client.getItems<Card>(userId)
 }
+
+export const edit =(userId:string ,item: Card)=>{
+    return client.editItem<Card>(userId,item)
+}
